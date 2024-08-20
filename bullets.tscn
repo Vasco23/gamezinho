@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cim6w30cuqqks"]
+
+[ext_resource type="Script" path="res://scripts/tiros.gd" id="1_ybfvx"]
+[ext_resource type="Texture2D" uid="uid://bduu0o3pe11g" path="res://images/bullet1.png" id="2_hxktl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7evqb"]
+size = Vector2(6.90621, 4.90633)
+
+[node name="bullets" type="Area2D"]
+top_level = true
+position = Vector2(190, 118)
+rotation = 0.193882
+script = ExtResource("1_ybfvx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8147e-06, 1.52588e-05)
+shape = SubResource("RectangleShape2D_7evqb")
+
+[node name="Bullet1" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(8.9407e-07, 8.59797e-06)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_hxktl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

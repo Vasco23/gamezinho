@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6vi77mwdku1f"]
+
+[ext_resource type="Script" path="res://scripts/shotting.gd" id="1_ke7fb"]
+
+[node name="shotting" type="Area2D"]
+collision_priority = -1.0
+script = ExtResource("1_ke7fb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

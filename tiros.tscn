@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://brdqybcr4rhh6"]
+
+[ext_resource type="Texture2D" uid="uid://bduu0o3pe11g" path="res://images/bullet1.png" id="1_amc2e"]
+[ext_resource type="Script" path="res://scripts/tiros.gd" id="1_ueani"]
+[ext_resource type="PackedScene" uid="uid://b7vb5skskgd1a" path="res://hitbox/hurtbox.tscn" id="2_mqyj8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m3wk"]
+size = Vector2(6.3174, 4.81317)
+
+[node name="tiros" type="CharacterBody2D"]
+position = Vector2(92, 67)
+rotation = 0.274198
+script = ExtResource("1_ueani")
+
+[node name="hurtbox" parent="." instance=ExtResource("2_mqyj8")]
+position = Vector2(1.90735e-06, -3.33786e-06)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-0.421074, -0.0601959)
+shape = SubResource("RectangleShape2D_0m3wk")
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_amc2e")
